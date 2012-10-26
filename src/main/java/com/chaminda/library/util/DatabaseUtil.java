@@ -7,6 +7,11 @@ import com.chaminda.library.domain.Library;
 
 public class DatabaseUtil {
 
+	/**
+	 * This operation returns collection of libraries to be initialised.
+	 * 
+	 * @return map of libraries.
+	 */
 	public static Map<String, Library> loadInitialData() {
 
 		Map<String, Library> map = new HashMap<String, Library>();

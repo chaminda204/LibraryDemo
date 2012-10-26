@@ -21,15 +21,24 @@ public class LibraryDaoImpl implements ILibraryDao {
 
 	private Map<String, Library> database;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public LibraryDaoImpl() {
 		database = new HashMap<String, Library>();
 		database = DatabaseUtil.loadInitialData();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public Collection<Library> getAllLibraries() {
 		return database.values();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public Library getLibraryByName(final String name) {
 		Library library = null;
 
@@ -40,11 +49,17 @@ public class LibraryDaoImpl implements ILibraryDao {
 		return library;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public void saveLibrary(final Library library) {
 		database.put(library.getName(), library);
 
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public void saveLibraries(final Collection<Library> libraries) {
 		for (Library library : libraries) {
 			database.put(library.getName(), library);

@@ -16,29 +16,31 @@ import com.chaminda.library.service.ILibraryService;
 public class LibraryDelegate {
 
 	ILibraryService libraryService;
-	
+
 	/**
+	 * This operation allocate books to the libraries which are in the database.
+	 * The books will be allocated based on the weighting.
 	 * 
 	 * @param book
+	 *            name of the book to be allocated.
 	 * @param quantity
-	 * @return
+	 *            no of books to be allocated.
+	 * @return Collection of allocated libraries.
 	 */
 	public Collection<Library> allocateBooks(final String book, int quantity) {
 
-        Collection<Library> allocatedBooks = libraryService.allocateBooks(book, quantity);
+		Collection<Library> allocatedBooks = libraryService.allocateBooks(book, quantity);
 
 		return allocatedBooks;
-		
+
 	}
-	
+
 	public Collection<Library> getAllLibraries() {
 
 		final Collection<Library> books = libraryService.getAllLibraries();
-		
+
 		return books;
 	}
-	
-	
 
 	/**
 	 * Setter method for libraryService

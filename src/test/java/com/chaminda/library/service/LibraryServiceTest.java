@@ -56,7 +56,20 @@ public class LibraryServiceTest {
 	}
 
 	@Test
-	public void testBookAllocationsForThreeBooks() {
+	public void bookAllocationForZeroBooks() {
+		// Given 5 Libraries with different weighting.
+		given(iLibraryService.getAllLibraries()).willReturn(getLibrariesforGetAllLibraries());
+
+		// When allocate zero books
+		Collection<Library> allocationforZeroBooks = iLibraryService.allocateBooks("Head First EJB", 0);
+
+		// Then - The collection should be null
+		assertNull("Allocation for zero books should return a null value", allocationforZeroBooks);
+
+	}
+
+	@Test
+	public void bookAllocationsForThreeBooks() {
 
 		// Given 5 Libraries with different weighting.
 		given(iLibraryService.getAllLibraries()).willReturn(getLibrariesforGetAllLibraries());
@@ -100,7 +113,7 @@ public class LibraryServiceTest {
 	}
 
 	@Test
-	public void testBookAllocationsForFiveBooks() {
+	public void bookAllocationsForFiveBooks() {
 
 		// Given 5 Libraries with different weighting.
 		given(iLibraryService.getAllLibraries()).willReturn(getLibrariesforGetAllLibraries());
@@ -146,7 +159,7 @@ public class LibraryServiceTest {
 	}
 
 	@Test
-	public void testBookAllocationsForTenBooks() {
+	public void bookAllocationsForTenBooks() {
 
 		// Given 5 Libraries with different weighting.
 		given(iLibraryService.getAllLibraries()).willReturn(getLibrariesforGetAllLibraries());
@@ -191,7 +204,7 @@ public class LibraryServiceTest {
 	}
 
 	@Test
-	public void testBookAllocationsForTwelveBooks() {
+	public void bookAllocationsForTwelveBooks() {
 
 		// Given 5 Libraries with different weighting.
 		given(iLibraryService.getAllLibraries()).willReturn(getLibrariesforGetAllLibraries());

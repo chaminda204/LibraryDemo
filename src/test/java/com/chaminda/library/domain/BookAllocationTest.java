@@ -3,9 +3,7 @@
  */
 package com.chaminda.library.domain;
 
-import static org.junit.Assert.*;
-import junit.framework.Assert;
-
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;

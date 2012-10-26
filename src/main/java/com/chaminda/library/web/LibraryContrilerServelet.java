@@ -32,13 +32,16 @@ public class LibraryContrilerServelet extends HttpServlet {
 	private static final String AJAX_CMD_LOAD_LIBRARIES = "loadLibraries";
 
 	LibraryDelegate libraryDelegate;
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	private Gson jsonConverter = new Gson();
 
+	// TODO This class needs to be refactored and implement FrontController
+
+	/**
+	 * 
+	 */
 	public void doGet(final HttpServletRequest servletRequest, final HttpServletResponse servletResponse)
 			throws ServletException, IOException {
 
@@ -57,8 +60,6 @@ public class LibraryContrilerServelet extends HttpServlet {
 
 			} else if (commandName.equals(AJAX_COMMAND_ALLOCATE_BOOKS)) {
 				String title = null;
-
-				// TODO Transfer this to a sepeate class
 
 				if (servletRequest.getParameter("book_title") != null
 						&& !servletRequest.getParameter("book_title").isEmpty()) {
@@ -81,6 +82,9 @@ public class LibraryContrilerServelet extends HttpServlet {
 
 	}
 
+	/**
+	 * 
+	 */
 	public void doPost(final HttpServletRequest servletRequest, final HttpServletResponse servletResponse)
 			throws ServletException, IOException {
 		doGet(servletRequest, servletResponse);

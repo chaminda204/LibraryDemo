@@ -22,10 +22,20 @@ public class LibraryServiceImpl implements ILibraryService {
 
 	private static final int VALUE_ONE = 1;
 	private static final int VALUE_ZERO = 0;
+
+	/**
+	 * this is used for calculation of percentage.
+	 */
 	private static final double VALUE_HUNDRED_PERCENT = .01;
 
+	/**
+	 * Holds libraryDao instance.
+	 */
 	ILibraryDao libraryDao;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public Collection<Library> allocateBooks(final String book, int quantity) {
 		Collection<Library> allocatedLibraries = null;
 		if (validateQuantity(quantity)) {
@@ -122,7 +132,7 @@ public class LibraryServiceImpl implements ILibraryService {
 	}
 
 	/**
-	 * 
+	 * {@inheritDoc}
 	 */
 	public Collection<Library> getAllLibraries() {
 
