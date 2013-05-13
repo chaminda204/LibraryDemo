@@ -25,6 +25,7 @@ Steps:
 
 Running the application.
 ========================
+For instructions on setting Extjs, please refer to http://www.sencha.com/products/extjs .
 
 Copy the PeterPalLibraryWeb.war file to deployment folder in your web application and start the server.
 Please note this was tested on JBoss server.
